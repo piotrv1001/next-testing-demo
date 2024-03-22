@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Vitest Tests
 on:
   push:
     branches: [ main, master ]
@@ -14,8 +14,7 @@ jobs:
       with:
         node-version: lts/*
     - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
+      run: npm install -D vitest @vitejs/plugin-react jsdom @testing-library/react
+    - name: Run Vitest tests
+      run: npx vitest
+

@@ -3,9 +3,9 @@ import { render, screen } from '@testing-library/react';
 import HomePage from '@/app/page';
 
 test('HomePage', () => {
-  render(<HomePage />); // Arrange
+  render(<HomePage />); 
+  
+  const heading = screen.getByRole('heading', { name: /home/i });
 
-  const heading = screen.getByRole('heading', { name: /home/i }); // Act
-
-  expect(heading).toBeDefined(); // Assert
+  expect(heading).toBeDefined();
 })
